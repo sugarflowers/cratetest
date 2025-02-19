@@ -61,11 +61,11 @@ pub fn get_window_rect(hwnd: HWND) -> RECT {
 *     ex) get_window_infos();
 *
 */
-static mut WINDOW_INFOS: Vec<WindowInfo> = Vec::new();
+pub static mut WINDOW_INFOS: Vec<WindowInfo> = Vec::new();
 
-struct WindowInfo {
-    hwnd: HWND,
-    title: String,
+pub struct WindowInfo {
+    pub hwnd: HWND,
+    pub title: String,
 }
 
 unsafe extern "system" fn enum_windows_proc(hwnd: HWND, _lparam: isize) -> i32 {
