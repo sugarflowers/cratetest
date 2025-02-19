@@ -1,0 +1,18 @@
+[package]
+name = "cratetest"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+winapi = { version = "0.3.9", features = ["winuser"], optional = true }
+kira = { version = "0.9.6", optional = true }
+
+[lib]
+path = "src/lib.rs"
+
+[features]
+audio = ["kira"]
+automation = ["winapi"]
+
+
+
